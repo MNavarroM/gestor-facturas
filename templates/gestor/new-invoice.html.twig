@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div>
+    <form action="" method="post">
+        <div>
+            <select>
+                <option value="">Choose your option</option>
+                {% for cliente in clientes %}
+                    <option value="">{{ cliente.nombre }}</option>                    
+                {% endfor %}                                
+                <option value="">ASD</option>                    
+            </select>
+            <label>Selecciona un cliente</label>
+        </div>
+    </form>
+
+</div>
+{% block javascript %}
+
+{% endblock javascript %}
+{% endblock body %}

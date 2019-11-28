@@ -9,3 +9,7 @@ crearCliente:
 enviarCliente:
   path:   /enviar-cliente
   controller: App\Controller\GestorController::sendCliente  
+
+crearFactura:
+  path: /crear-factura
+  controller: App\Controller\GestorController::crearFactura  

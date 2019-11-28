@@ -1,0 +1,170 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+	<style>
+		* {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		h1,
+		h5,
+		h3 {
+			padding: 0;
+			margin: 0;
+		}
+
+		main{
+			margin-top: 60px;
+		}
+
+		.num-invoice {
+			text-align: right;
+			padding: 1px 15px 15px;
+			margin-bottom: 30px;
+		}
+
+		.info p {
+			margin: 0;
+			padding: 0 0 0 7px;
+		}
+
+		.name {
+			padding: 5px;
+			color: white;
+		}
+
+		.name > span {
+			background-color: #47ff41;
+		}
+
+		.data-invoice {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			margin-bottom: 80px;
+		}
+
+		table {
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		thead {
+			background-color: #424242;
+			color: white;
+		}
+
+		th {
+			border: 1px solid black;
+		}
+
+		td {
+			border: 1px solid black;
+		}
+	</style>
+	<main class="" style="width:21cm;height: 29.7cm;">
+
+		<div>
+			<div class="header-invoice">
+				<div class="num-invoice">
+					<span style="font-size: 20px; padding: 15px;">Factura #1069<span><br/>
+							<span>12-12-1212</span>
+						</div>
+						<div class="data-invoice">
+							<div>
+								<div id="invoice-me">
+									<div class="logo"></div>
+									<div class="info">
+										<h5 class="name indigo lighten-3">Transportes Antonio Navarro</h5>
+										<p>37.211.395-F
+										</p>
+										<p>598854447
+										</p>
+										<p>C/ Calle
+										</p>
+										<p>Almodóvar del río, Córdoba
+										</p>
+										<p>14720
+										</p>
+									</br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="invoice-client">
+						<div class="logo"></div>
+						<div class="info">
+							<h5 class="name indigo lighten-3">Transportes Antonio Navarro</h5>
+							<p>37.211.395-F
+							</p>
+							<p>598854447
+							</p>
+							<p>C/ Calle
+							</p>
+							<p>Almodóvar del río, Córdoba
+							</p>
+							<p>14720
+							</p>
+						</br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="invoice-table">
+		<!--End Invoice Mid-->
+		<div id="invoice-bot">
+			<div id="table">
+				<table class="striped">
+					<thead>
+						<tr>
+							<th class="item">
+								Descripción
+							</th>
+							<th class="Hours">
+								Cantidad
+							</th>
+							<th class="Rate">
+								Precio
+							</th>
+							<th class="subtotal">
+								Sub-total
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Porte de tractor de la finca El Injertal a Talleres la Estación</td>
+							<td>3</td>
+							<td>36</td>
+							<td>109</td>
+						</tr>
+						<tr>
+							<td>Porte de tractor de la finca El Injertal a Talleres la Estación</td>
+							<td>3</td>
+							<td>36</td>
+							<td>109</td>
+						</tr>
+						<tr>
+							<td>Porte de tractor de la finca El Injertal a Talleres la Estación</td>
+							<td>3</td>
+							<td>36</td>
+							<td>109</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="total">
+				<div>Total Neto : 1025 €</div>
+				<div>IVA 21%: 250 €</div>
+				<div>Total : 1475 €</div>
+			</div>
+		</div>
+		<!--End InvoiceBot-->
+	</div>
+</main>{% endblock body %}

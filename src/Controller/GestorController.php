@@ -19,9 +19,13 @@ class GestorController extends AbstractController
 
     public function createCliente()
     {
-        return $this->render('gestor/factural.html.twig', [
+        return $this->render('gestor/factura.html.twig', [
             'controller_name' => 'GestorController',
         ]);
+    }
+
+    public function verClientes(){
+
     }
 
     public function sendCliente(Request $request){
@@ -43,7 +47,15 @@ class GestorController extends AbstractController
         $entityManager->persist($cliente);
         $entityManager->flush();
         //return "Persist";
+    }
 
+    public function crearFactura(Request $request){
+        //$idCliente = $request->request->get('id_cliente');
+        $clientes = $this->getDoctrine()->getRepository(Empresa::class)->findAll();
+        return $this->render('gestor/new-invoice.html.twig', [
+            'controller_name' => 'GestorController',
+            'clientes' => $clientes
+        ]);
     }
 
 }

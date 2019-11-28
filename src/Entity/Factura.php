@@ -53,6 +53,11 @@ class Factura
      */
     private $servicios;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $year;
+
     public function __construct()
     {
         $this->servicios = new ArrayCollection();
@@ -162,6 +167,18 @@ class Factura
                 $servicio->setFactura(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getYear(): ?int
+    {
+        return $this->year;
+    }
+
+    public function setYear(int $year): self
+    {
+        $this->year = $year;
 
         return $this;
     }
