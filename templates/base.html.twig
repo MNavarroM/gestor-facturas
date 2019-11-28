@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <!-- Compiled and minified CSS -->    
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        {% endblock %}            
-            <!-- Compiled and minified JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Gestor Facturas
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<!-- Compiled and minified CSS -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		{% endblock %}
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Gestor Facturas</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li>
+						<a>Mis Facturas</a>
+					</li>
+					<li>
+						<a>Crear Factura</a>
+					</li>
+					<li>
+						<a href="{{ path('crearCliente') }}">Añadir Cliente</a>
+					</li>
+					<li>
+						<a>Ver Clientes</a>
+                    </li>
+					<li>
+						<a>Ver Facturas</a>
+					</li>                    
+					<li>
+						<a>Mis datos</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		{% block body %}{% endblock %}
+		{% block javascripts %}{% endblock %}
+	</body>
 </html>

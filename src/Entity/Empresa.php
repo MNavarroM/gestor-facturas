@@ -34,7 +34,7 @@ class Empresa
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $localidad;
+    private $poblacion;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -87,14 +87,14 @@ class Empresa
         return $this;
     }
 
-    public function getLocalidad(): ?string
+    public function getPoblacion(): ?string
     {
-        return $this->localidad;
+        return $this->poblacion;
     }
 
-    public function setLocalidad(string $localidad): self
+    public function setPoblacion(string $poblacion): self
     {
-        $this->localidad = $localidad;
+        $this->poblacion = $poblacion;
 
         return $this;
     }

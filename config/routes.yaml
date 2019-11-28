@@ -1,3 +1,11 @@
 home:
   path:   /
   controller: App\Controller\GestorController::index        
+
+crearCliente:
+  path:   /crear-cliente
+  controller: App\Controller\GestorController::createCliente
+
+enviarCliente:
+  path:   /enviar-cliente
+  controller: App\Controller\GestorController::sendCliente  

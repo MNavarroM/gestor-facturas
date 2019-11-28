@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<div class="container" stylee="background-color:red;">
+		<div class="row card">
+			<h2 style="padding:15px">Crear cliente</h2>
+			<div class="">
+				<form action="{{ path('enviarCliente') }}" method="POST" class="col s12" style="padding:20px;">
+					<div class="row">
+						<div class="input-field col s10 l12">
+							<input placeholder="Nombre de la empresa..." name="nombre" id="nombre" type="text" class="validate">
+							<label for="nombre">Nombre</label>
+						</div>
+						<div class="input-field col s2 l12">
+							<input placeholder="NIF..." name="nif" id="nif" type="text" class="validate">
+							<label for="nif">NIF</label>
+						</div>
+						<div class="input-field col s8 l12">
+							<input placeholder="Dirección..." name="direccion" id="direccion" type="text" class="validate">
+							<label for="direccion">Dirección</label>
+						</div>
+						<div class="input-field col s4 l12">
+							<input placeholder="Población..." name="poblacion" id="poblacion" type="text" class="validate">
+							<label for="poblacion">Población</label>
+						</div>
+						<div class="input-field col s6 l12">
+							<input placeholder="Provincia..." name="provincia" id="provincia" type="text" class="validate">
+							<label for="provincia">Provincia</label>
+						</div>
+						<div class="input-field col s1 l12">
+							<input placeholder="Código Postal..." name="cp" id="cp" type="text" class="validate">
+							<label for="cp">Código Postal</label>
+						</div>
+						<div class="col s12">
+							<button class="btn">Crear cliente</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+{% endblock %}
