@@ -11,7 +11,10 @@
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		{% endblock %}
 		<!-- Compiled and minified JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+			crossorigin="anonymous"></script>		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 	</head>
 	<body>
 		<nav>
@@ -22,7 +25,7 @@
 						<a>Mis Facturas</a>
 					</li>
 					<li>
-						<a>Crear Factura</a>
+						<a href="{{ path('crearFactura') }}">Crear Factura</a>
 					</li>
 					<li>
 						<a href="{{ path('crearCliente') }}">Añadir Cliente</a>

@@ -13,3 +13,7 @@ enviarCliente:
 crearFactura:
   path: /crear-factura
   controller: App\Controller\GestorController::crearFactura  
+
+generarFactura:
+  path: /generar-factura
+  controller: App\Controller\GestorController::generarFactura  

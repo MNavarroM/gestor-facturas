@@ -1,23 +1,73 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+<style>
 
+</style>
 <div>
-    <form action="" method="post">
+    <form action="{{ path('generarFactura') }}" method="post">
         <div>
-            <select>
+            <select  name="id_cliente">
                 <option value="">Choose your option</option>
                 {% for cliente in clientes %}
-                    <option value="">{{ cliente.nombre }}</option>                    
+                    <option value="{{ cliente.id }}">{{ cliente.nombre }}</option>                    
                 {% endfor %}                                
-                <option value="">ASD</option>                    
             </select>
             <label>Selecciona un cliente</label>
         </div>
+
+        <span>Añadir Servicio:</span><br/>
+        <label for="services">Descripción</label>
+        <input type="text" name="descripcion[]" id="descripcion"/>
+        <label for="cantidad">Cantidad</label>
+        <input type="number" name="cantidad[]" id="cantidad"/>
+        <label for="precio">Descripción</label>
+        <input type="number" name="precio[]" id="precio"/>
+        <label for="">Sub-Total</label>
+        <button class="btn">Enviar</buton>
+        <input type="hidden" id="arrayServices" name="arrayServices">
     </form>
+    <button class="btn" id="addService">Add Service</buton>
+    <div class="services" id="services">
+        
+    </div>
 
 </div>
 {% block javascript %}
+    <script>
+        $(function () {
+            $('select').formSelect();
+            services = document.getElementById('services');
+            servicesArray = [];
+            $("#addService").click(function (e) { 
+             e.preventDefault();
+             descripcion = document.getElementById("descripcion").value;
+             cantidad = document.getElementById("cantidad").value;
+             precio = document.getElementById("precio").value;
+             servicio = [descripcion, precio, cantidad];
+             servicesArray.push(servicio);             
+             console.log(servicio);
+             services.innerHTML  = servicio;
+             console.log(services);
+             console.log(descripcion);
+             console.log(cantidad);
+             console.log(servicesArray);
+            });
 
+            $("form").submit(function (e) { 
+                e.preventDefault();
+                document.getElementById("arrayServices").value=jsonServices;
+                console.log(jsonServices);
+
+                this.submit();
+            });
+
+        });
+
+
+        
+        
+    </script>        
 {% endblock javascript %}
 {% endblock body %}
+

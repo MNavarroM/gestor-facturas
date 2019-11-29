@@ -37,6 +37,11 @@ class Servicio
      */
     private $factura;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $subtotal;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Servicio
     public function setFactura(?Factura $factura): self
     {
         $this->factura = $factura;
+
+        return $this;
+    }
+
+    public function getSubtotal(): ?float
+    {
+        return $this->subtotal;
+    }
+
+    public function setSubtotal(float $subtotal): self
+    {
+        $this->subtotal = $subtotal;
 
         return $this;
     }

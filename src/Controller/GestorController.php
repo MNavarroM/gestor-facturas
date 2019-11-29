@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use App\Entity\Empresa;
+use App\Entity\Cliente;
 
 
 class GestorController extends AbstractController
@@ -19,7 +19,7 @@ class GestorController extends AbstractController
 
     public function createCliente()
     {
-        return $this->render('gestor/factura.html.twig', [
+        return $this->render('gestor/formulario-cliente.html.twig', [
             'controller_name' => 'GestorController',
         ]);
     }
@@ -36,10 +36,10 @@ class GestorController extends AbstractController
         $poblacion = $request->request->get('poblacion');
         $cp = $request->request->get('cp');
 
-        $cliente = new Empresa();
+        $cliente = new Cliente();
         $cliente->setNombre($nombre);
         $cliente->setCif($nif);
-        $cliente->setLocalidad($poblacion);
+        $cliente->setPoblacion($poblacion);
         $cliente->setDireccion($direccion);
         $cliente->setCp($cp);
         $cliente->setProvincia($provincia);
@@ -51,11 +51,26 @@ class GestorController extends AbstractController
 
     public function crearFactura(Request $request){
         //$idCliente = $request->request->get('id_cliente');
-        $clientes = $this->getDoctrine()->getRepository(Empresa::class)->findAll();
+        $clientes = $this->getDoctrine()->getRepository(Cliente::class)->findAll();
         return $this->render('gestor/new-invoice.html.twig', [
             'controller_name' => 'GestorController',
             'clientes' => $clientes
         ]);
+    }
+
+    public function generarFactura(Request $request){
+        $idCliente = $request->request->get('id_cliente');
+        $cliente = $this->getDoctrine()->getRepository(Cliente::class)->find($idCliente);
+        //print_r($request->request);
+        $array = $request->request->get('arrayServices');
+        //echo $array;
+        parse_str($array);
+        echo $array;
+        die();
+        return $this->render('gestor/factura2.html.twig', [
+            'controller_name' => 'GestorController',
+            'cliente' => $cliente
+        ]);        
     }
 
 }
